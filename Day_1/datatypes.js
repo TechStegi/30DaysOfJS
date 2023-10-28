@@ -1,6 +1,6 @@
 
 
-    
+
 import variable from './variable.js'
 
 
@@ -28,10 +28,10 @@ const myPerson = {
     age: 18
 }
 
-let firstName = "Sir", lastName = "Stegi", maritalStatus ="single", country="Germany", age=18;
+let firstName = "Sir", lastName = "Stegi", maritalStatus = "single", country = "Germany", age = 18;
 
 
 var myAge = 18;
 let yourAge = 20;
 
-console.log("I am",myAge,"years old.", "You are",yourAge,"years old.")
+console.log("I am", myAge, "years old.", "You are", yourAge, "years old.")
