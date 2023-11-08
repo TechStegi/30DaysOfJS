@@ -1,3 +1,6 @@
+
+import cts from "./countries.js"
+
 const countries = [
   'Albania',
   'Bolivia',
@@ -21,8 +24,6 @@ const webTechs = [
   'Node',
   'MongoDB'
 ]
-
-const mernStack = ['MongoDB', 'Express', 'React', 'Node']
 
 
 // 1.
@@ -128,7 +129,7 @@ const mernStack = ['MongoDB', 'Express', 'React', 'Node']
 
 
 // 10.
-s = 0
+let s = 0
 for (let i = 0; i <= 100; i++) {
   s = s + i;
 }
@@ -136,8 +137,8 @@ console.log(s);
 
 
 // 11.
-s1 = 0;
-s2 = 0;
+let s1 = 0;
+let s2 = 0;
 for (let i = 0; i <= 100; i++) {
   if (i % 2 === 0) {
     s1 = s1 + i;
@@ -320,5 +321,101 @@ function mostChars() {
 console.log(mostChars());
 
 
+// Exercise Level 2, 10.
+function char5() {
+  let winnerArr = [];
+  for (let i = 0; i < countries.length; i++) {
+    if (countries[i].length === 5) {
+      winnerArr.push(countries[i]);
+    }
+  }
+  return winnerArr;
+}
+console.log(char5());
 
 
+// Exercise Level 2, 11.
+function longestWord(arr) {
+  let lengthArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    lengthArr.push(arr[i].length);
+  }
+  let longestWordIndex = lengthArr.indexOf(Math.max(...lengthArr));
+  return arr[longestWordIndex];
+}
+console.log("longest word: " + longestWord(webTechs));
+
+
+// Exercise Level 2, 12.
+function n12(arr){
+  let all1 = [];
+  for (let i = 0; i < arr.length; i++) {
+    let singleArr = [arr[i], arr[i].length];
+    all1.push(singleArr);
+  }
+  return all1;
+}
+console.log(n12(webTechs));
+
+
+// Exercise Level 2, 13.
+function MERN() {
+  const mernStack = ["MongoDB", "Express", "React", "Node"];
+  let acronym = "";
+  for (let i = 0; i < mernStack.length; i++) {
+    acronym = acronym + mernStack[i].charAt(0).toUpperCase();
+  }
+  return acronym;
+}
+console.log(MERN());
+
+
+// Exercise Level 2, 14.
+let arr1 =  ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"];
+for (let x of arr1) {
+  console.log(x);
+}
+
+
+// Exercise Level 2, 15.
+function reverseFruits() {
+  let fruits = ['banana', 'orange', 'mango', 'lemon'];
+  let zwischenspeicher = fruits.slice();
+  let fruits2 = [];
+  for (let i = 0; i < zwischenspeicher.length; i++) {
+    let saveLast = fruits.pop();
+    fruits2.push(saveLast);
+  }
+  return fruits2;
+}
+console.log(reverseFruits());
+
+
+// Exercise Level 2, 15.
+const fullStack = [
+  ['HTML', 'CSS', 'JS', 'React'],
+  ['Node', 'Express', 'MongoDB']
+];
+const allStack = fullStack[0].concat(fullStack[1]);
+for (let x of allStack) {
+ console.log( x.toUpperCase());
+}
+
+
+// Exercise Level 3
+let countriesCopy = cts.slice();
+let sortedCountries = cts.slice().sort();
+let arr3 = [];
+for (let i = 0; i < sortedCountries.length; i++) {
+  if (sortedCountries[i].includes("land")) {
+    arr3.push(sortedCountries[i]);
+  } 
+}
+console.log(arr3);
+let arr4 = [];
+for (let i = 0; i < countriesCopy.length; i++) {
+  if (countriesCopy[i].includes(" ")) {
+    arr4.push(countriesCopy[i]);
+  }
+}
+console.log("Countries with two or more words:", arr4);
