@@ -82,3 +82,29 @@ function sumOfArrayItems(...numbers) {
 
 console.log(sumOfArrayItems(1, 2, 3))
 
+
+function isValidVariable(variable) {
+    const character = "$_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    let correct_character = 0
+    for (let i = 0; i < variable.length; i++) {
+        for (x of character) {
+            if (variable[i] === x) {
+                // return `Invalid variable. You are not allowed to use ${x}.`
+                console.log("break", x)
+                correct_character++;
+                break;
+            }
+        } 
+    }
+    if (variable.includes(" ")){
+        return "You are not allowed to use spaces. Please try again."
+    } else if (correct_character !== variable.length) {
+        return `Invalid variable. Please try again. You can use all characters and numbers as well as '$' and '_', but no other symbols`
+    } else {
+    return "valid variable"
+    }
+}
+
+console.log(isValidVariable("!$_Hello"));
+
+
